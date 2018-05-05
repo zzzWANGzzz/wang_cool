@@ -1,6 +1,7 @@
-<<<<<<< HEAD
-=======
-前端学院-1的效果图为:
+
+前端学院-1.html的效果图为:
 ---
 ![gif](https://github.com/zzzWANGzzz/wang_cool/blob/百度前端技术学院/效果图/1.gif)
->>>>>>> 84762cfbde0625190a9adcaed70136e70e678706
+前端学院-2.html的效果图为:
+---
+![gif](https://github.com/zzzWANGzzz/wang_cool/blob/百度前端技术学院/效果图/2.gif)
