@@ -102,7 +102,7 @@
 			  img=document.querySelectorAll(".main .image");
 		function clear(){
 			for(let i=1;i<img.length+1;i++){
-				let name=new RegExp(" img"+i);
+				let name=new RegExp(` img${i}`);
 				img[i-1].className=img[i-1].className.replace(name,"");
 			}
 		}
