@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		.main{
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		.main ul{
+			position: absolute;
+			width: 100%;
+			list-style: none;
+			text-align: center;
+			bottom: 20px;
+			z-index: 10;
+		}
+		.main ul li{
+			display: inline-block;
+			width: 200px;
+			height: 112px;
+			overflow: hidden;
+			margin-right: 10px;
+		}
+		.main li img{
+			width: 100%;
+		}
+		.main .image{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		.main .img1{
+			z-index: 6;
+			animation: one .5s ease-out 1;
+		}
+		.main .img2{
+			z-index: 6;
+			animation: two .5s ease-out 1;
+		}
+		.main .img3{
+			z-index: 6;
+			animation: three 1s ease-in 1;
+		}
+		.main .img4{
+			z-index: 6;
+			animation: four 1s ease-out 1;
+		}
+		.main .img5{
+			z-index: 6;
+			animation: five .7s ease-in-out 1;
+		}
+		@keyframes one{
+			0% {left:-500px;}
+			100% {left: 0px;}
+		}
+		@keyframes two{
+			0% {top:350px;}
+			100% {top: 0px;}
+		}
+		@keyframes three{
+			0% {transform: scale(0.1);}
+			100% {transform: scale(1);}
+		}
+		@keyframes four{
+			0% {transform: scale(2);}
+			100% {transform: scale(1);}
+		}
+		@keyframes five{
+			0% {transform: rotate(-360deg);transform: scale(0.1);}
+			100% {transform: rotate(0deg);transform: scale(1);}
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<img src="./images/4.jpg" class="image">
+		<img src="./images/5.jpg" class="image">
+		<img src="./images/6.jpg" class="image">
+		<img src="./images/7.jpg" class="image">
+		<img src="./images/8.jpg" class="image">
+		<ul>
+			<li><img src="./images/4.jpg"></li>
+			<li><img src="./images/5.jpg"></li>
+			<li><img src="./images/6.jpg"></li>
+			<li><img src="./images/7.jpg"></li>
+			<li><img src="./images/8.jpg"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		const icon=document.querySelectorAll(".main li"),
+			  img=document.querySelectorAll(".main .image");
+		function clear(){
+			for(let i=1;i<img.length+1;i++){
+				let name=new RegExp(" img"+i);
+				img[i-1].className=img[i-1].className.replace(name,"");
+			}
+		}
+		icon[0].onclick=function(){
+			clear();
+			img[0].className+=" img1";
+		}
+		icon[1].onclick=function(){
+			clear();
+			img[1].className+=" img2";
+		}
+		icon[2].onclick=function(){
+			clear();
+			img[2].className+=" img3";
+		}
+		icon[3].onclick=function(){
+			clear();
+			img[3].className+=" img4";
+		}
+		icon[4].onclick=function(){
+			clear();
+			img[4].className+=" img5";
+		}
+	</script>
+</body>
+</html>
