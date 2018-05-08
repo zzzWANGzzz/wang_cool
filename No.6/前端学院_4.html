@@ -23,7 +23,7 @@
 			list-style: none;
 			text-align: center;
 			bottom: 20px;
-			z-index: 10;
+			z-index: 3;
 		}
 		.main ul li{
 			display: inline-block;
@@ -39,25 +39,26 @@
 			width: 100%;
 			height: 100%;
 			position: absolute;
+			z-index: 1;
 		}
-		.main .img1{
-			z-index: 6;
+		.main .img0{
+			z-index: 2;
 			animation: one .5s ease-out 1;
 		}
-		.main .img2{
-			z-index: 6;
+		.main .img1{
+			z-index: 2;
 			animation: two .5s ease-out 1;
 		}
-		.main .img3{
-			z-index: 6;
+		.main .img2{
+			z-index: 2;
 			animation: three 1s ease-in 1;
 		}
-		.main .img4{
-			z-index: 6;
+		.main .img3{
+			z-index: 2;
 			animation: four 1s ease-out 1;
 		}
-		.main .img5{
-			z-index: 6;
+		.main .img4{
+			z-index: 2;
 			animation: five .7s ease-in-out 1;
 		}
 		@keyframes one{
@@ -98,33 +99,21 @@
 		</ul>
 	</div>
 	<script type="text/javascript">
-		const icon=document.querySelectorAll(".main li"),
-			  img=document.querySelectorAll(".main .image");
-		function clear(){
-			for(let i=1;i<img.length+1;i++){
-				let name=new RegExp(` img${i}`);
-				img[i-1].className=img[i-1].className.replace(name,"");
-			}
-		}
-		icon[0].onclick=function(){
-			clear();
-			img[0].className+=" img1";
-		}
-		icon[1].onclick=function(){
-			clear();
-			img[1].className+=" img2";
-		}
-		icon[2].onclick=function(){
-			clear();
-			img[2].className+=" img3";
-		}
-		icon[3].onclick=function(){
-			clear();
-			img[3].className+=" img4";
-		}
-		icon[4].onclick=function(){
-			clear();
-			img[4].className+=" img5";
+		const icon=document.querySelectorAll(".main ul li"),
+			  img=document.querySelectorAll(".main .image"),
+			  len=img.length;
+		let pre=0,
+			first=true;
+		for(let i=0;i<len;i++){
+			icon[i].addEventListener("click",function(){
+				if (!first) {
+					img[pre].classList.toggle(`img${pre}`);
+				}
+				img[i].classList.toggle(`img${i}`);
+				first=false;
+				pre=i;
+
+			});
 		}
 	</script>
 </body>
