@@ -180,6 +180,7 @@
                         $(this).siblings(".form__label").find(".form__label__content").addClass("slideup");
                         $(this).siblings(".form__label").find(".line").removeClass("line_blur").addClass("line_focus");
                     }).blur(function(){
+                    	$(this).siblings(".form__label").find(".form__label__content").removeClass("slideup");
                         $(this).siblings(".form__label").find(".line").removeClass("line_focus").addClass("line_blur");
                         switch($(this).attr("type")){
                             case "email":val_0=$(this).val();break;
