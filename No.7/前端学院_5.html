@@ -165,20 +165,18 @@
                       $btn=$(".btn"),
                       $label=$(".form__label__content"),
                       len=$input.length;
-                for(let i=0;i<len;i++){
-                    $input.eq(i).focus(function(){
-                        $label.eq(i).addClass("slideup");
-                    }).blur(function(){
-                        if ($(this).val()=="") {
-                            $label.eq(i).removeClass("slideup");
-                        }
-                        if ($input.eq(0).val()!="" && $input.eq(1).val()!="") {
-                            $btn.addClass("animated pulse");
-                        }else{
-                            $btn.removeClass("animated pulse");
-                        }
-                    });
-                }
+                $input.focus(function(){
+                	$(this).next().find(".form__label__content").addClass("slideup");
+                }).blur(function(){
+                	if ($(this).val()=="") {
+                    	$(this).next().find(".form__label__content").removeClass("slideup");
+                    }
+                    if ($input.eq(0).val()!="" && $input.eq(1).val()!="") {
+                        $btn.addClass("animated pulse");
+                    }else{
+                        $btn.removeClass("animated pulse");
+                    }
+                });
             })
         </script>
     </body>
